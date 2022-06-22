@@ -8,17 +8,29 @@
 using static System.Console;
 Clear();
 
-int [] array = GetRandomArray(5,-5,5);
-WriteLine($"[")
+int [] array = RandomArray(5,5,-5);
+WriteLine($"[{String.Join(", ", array)}]");
+GetRevers (array);
+WriteLine($"[{String.Join(", ", array)}]");
 
 
-
-
-void GetRevers (int array)
+int [] RandomArray(int size, int maxValue, int minValue)
 {
-    int [] result=new int [size];
+    int [] arr = new int [size];
     for(int i=0; i<size; i++)
     {
-        result[i]=new Random().Next(minVa)
+        arr [i]=new Random().Next(minValue, maxValue+1);
     }
+    return arr;
+}
+
+void GetRevers (int [] array)
+{
+   
+    
+    for(int i=0; i<array.Length; i++)
+    {
+        array [i]=array[i]*-1;
+    }
+    
 }
